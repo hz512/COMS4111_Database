@@ -1,0 +1,163 @@
+Name: Haoran Zhu
+UNI: hz2712
+
+tests_people()
+test find_by_primary_key()
+test field_list is None
+{'playerID': 'affelje01', 'birthYear': '1979', 'birthMonth': '6', 'birthDay': '6', 'birthCountry': 'USA', 'birthState': 'AZ', 'birthCity': 'Phoenix', 'deathYear': '', 'deathMonth': '', 'deathDay': '', 'deathCountry': '', 'deathState': '', 'deathCity': '', 'nameFirst': 'Jeremy', 'nameLast': 'Affeldt', 'nameGiven': 'Jeremy David', 'weight': '225', 'height': '76', 'bats': 'L', 'throws': 'L', 'debut': '2002-04-06', 'finalGame': '2015-10-04', 'retroID': 'affej001', 'bbrefID': 'affelje01'}
+test field_list is not None
+{'playerID': 'affelje01', 'birthYear': '1979', 'birthMonth': '6', 'birthDay': '6'}
+test failed case: non-existent playerID; None should be returned
+None is returned
+
+test find_by_template()
+test field_list is None
+[{'playerID': 'affelje01', 'birthYear': '1979', 'birthMonth': '6', 'birthDay': '6', 'birthCountry': 'USA', 'birthState': 'AZ', 'birthCity': 'Phoenix', 'deathYear': '', 'deathMonth': '', 'deathDay': '', 'deathCountry': '', 'deathState': '', 'deathCity': '', 'nameFirst': 'Jeremy', 'nameLast': 'Affeldt', 'nameGiven': 'Jeremy David', 'weight': '225', 'height': '76', 'bats': 'L', 'throws': 'L', 'debut': '2002-04-06', 'finalGame': '2015-10-04', 'retroID': 'affej001', 'bbrefID': 'affelje01'}]
+test field_list is not None
+[{'playerID': 'affelje01', 'birthYear': '1979', 'birthMonth': '6', 'birthDay': '6'}]
+test failed case: non-existent template; empty list [] should be returned
+returned: []
+
+test delete_by_key()
+test successful deletion
+1
+check if deleted row is in the table...
+None is returned from find_by_primary_key(). The row is deleted.
+test failed deletion: non-existent playerID; 0 should be returned
+returned: 0
+
+test insert()
+playerID affelje01 was deleted from delete_by_key tests. Insert player affelje01 back to the table...
+check if the inserted row is present in the table
+Returned value is not None. Insertion was successful.
+
+test delete_by_template()
+test successful deletion
+1
+check if deleted row is in the table...
+0 row is returned from find_by_primary_template(). The row is deleted.
+test failed deletion: non-existent template; 0 should be returned
+returned: 0
+
+test successful update
+1
+print updated birthYear; 0000 should be returned
+returned: {'birthYear': '0000'}
+test failed update: nonexistent playerID; 0 should be returned
+returned: 0
+
+test successful update
+1
+print updated birthYear; 1981 should be returned
+returned: [{'birthYear': '1981'}]
+test failed update: nonexistent template; 0 should be returned
+returned: 0
+==========================================================================================================
+tests_batting()
+test find_by_primary_key()
+test field_list is None
+{'playerID': 'abercda01', 'yearID': '1871', 'stint': '1', 'teamID': 'TRO', 'lgID': 'NA', 'G': '1', 'AB': '4', 'R': '0', 'H': '0', '2B': '0', '3B': '0', 'HR': '0', 'RBI': '0', 'SB': '0', 'CS': '0', 'BB': '0', 'SO': '0', 'IBB': '', 'HBP': '', 'SH': '', 'SF': '', 'GIDP': '0'}
+test field_list is not None
+{'teamID': 'TRO', 'lgID': 'NA', 'G': '1', 'AB': '4'}
+test failed case: non-existent playerID; None should be returned
+None is returned
+
+test find_by_template()
+test field_list is None
+[{'playerID': 'aaronha01', 'yearID': '1954', 'stint': '1', 'teamID': 'ML1', 'lgID': 'NL', 'G': '122', 'AB': '468', 'R': '58', 'H': '131', '2B': '27', '3B': '6', 'HR': '13', 'RBI': '69', 'SB': '2', 'CS': '2', 'BB': '28', 'SO': '39', 'IBB': '', 'HBP': '3', 'SH': '6', 'SF': '4', 'GIDP': '13'}]
+test field_list is not None
+[{'H': '131', '2B': '27', '3B': '6', 'HR': '13'}]
+test failed case: non-existent template; empty list [] should be returned
+returned: []
+
+test delete_by_key()
+test successful deletion
+1
+check if deleted row is in the table...
+None is returned from find_by_primary_key(). The row is deleted.
+test failed deletion: non-existent playerID; 0 should be returned
+returned: 0
+
+test insert()
+batting [abercda01, 1871, 1] was deleted from delete_by_key tests. Insert the batting back to the table...
+check if the inserted row is present in the table
+Returned value is not None. Insertion was successful.
+
+test delete_by_template()
+test successful deletion
+1
+check if deleted row is in the table...
+0 row is returned from find_by_primary_template(). The row is deleted.
+test failed deletion: non-existent template; 0 should be returned
+returned: 0
+
+test update_by_key()
+test successful update
+1
+print updated AB; 27 should be returned
+returned: {'AB': '27'}
+test failed update: nonexistent playerID; 0 should be returned
+returned: 0
+
+test update_by_template()
+test successful update
+1
+print updated AB; 27 should be returned
+returned: {'AB': '27'}
+test failed update: nonexistent template; 0 should be returned
+returned: 0
+==========================================================================================================
+tests_appearances()
+test find_by_primary_key()
+test field_list is None
+{'yearID': '1871', 'teamID': 'RC1', 'lgID': 'NA', 'playerID': 'addybo01', 'G_all': '25', 'GS': '25', 'G_batting': '25', 'G_defense': '25', 'G_p': '0', 'G_c': '0', 'G_1b': '0', 'G_2b': '22', 'G_3b': '0', 'G_ss': '3', 'G_lf': '0', 'G_cf': '0', 'G_rf': '0', 'G_of': '0', 'G_dh': '0', 'G_ph': '0', 'G_pr': '0'}
+test field_list is not None
+{'G_all': '25', 'GS': '25', 'G_batting': '25', 'G_defense': '25'}
+test failed case: non-existent playerID; None should be returned
+None is returned
+
+test find_by_template()
+test field_list is None
+[{'yearID': '1871', 'teamID': 'RC1', 'lgID': 'NA', 'playerID': 'addybo01', 'G_all': '25', 'GS': '25', 'G_batting': '25', 'G_defense': '25', 'G_p': '0', 'G_c': '0', 'G_1b': '0', 'G_2b': '22', 'G_3b': '0', 'G_ss': '3', 'G_lf': '0', 'G_cf': '0', 'G_rf': '0', 'G_of': '0', 'G_dh': '0', 'G_ph': '0', 'G_pr': '0'}]
+test field_list is not None
+[{'G_lf': '0', 'G_cf': '0'}]
+test failed case: non-existent template; empty list [] should be returned
+returned: []
+
+test delete_by_key()
+test successful deletion
+1
+check if deleted row is in the table...
+None is returned from find_by_primary_key(). The row is deleted.
+test failed deletion: non-existent playerID; 0 should be returned
+returned: 0
+
+test insert()
+appearance [nonexistent_key, RC1, addybo01] was deleted from delete_by_key tests. Insert the appearance back to the table...
+check if the inserted row is present in the table
+Returned value is not None. Insertion was successful.
+
+test delete_by_template()
+test successful deletion
+1
+check if deleted row is in the table...
+0 row is returned from find_by_primary_template(). The row is deleted.
+test failed deletion: non-existent template; 0 should be returned
+returned: 0
+
+test update_by_key()
+test successful update
+1
+print updated G_3b; 27 should be returned
+returned: {'G_3b': '27'}
+test failed update: nonexistent playerID; 0 should be returned
+returned: 0
+
+test update_by_template()
+test successful update
+1
+print updated G_3b; 27 should be returned
+returned: [{'G_3b': '27'}]
+test failed update: nonexistent template; 0 should be returned
+returned: 0
+==========================================================================================================
